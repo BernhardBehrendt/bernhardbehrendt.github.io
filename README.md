@@ -1,1 +1,0 @@
-# bernhardbehrendt.github.io
