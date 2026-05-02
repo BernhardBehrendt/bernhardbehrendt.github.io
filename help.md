@@ -47,12 +47,89 @@ Use ALSA (`modprobe snd-virmidi`) or JACK MIDI
 
 ## <i class="bi bi-sliders"></i> Usage
 
-### <i class="bi bi-cursor"></i> Working with Cursors
+### <i class="bi bi-play-circle"></i> Getting Started Guide
 
-**Creating:** Click anywhere on the video to place a sampling cursor  
-**Moving:** Hover briefly to enable drag mode, then reposition as needed  
-**Layering:** Long hover makes a cursor transparent for placing others behind it  
-**Touch:** Works natively on touch devices with immediate drag capability
+Follow this step-by-step walkthrough to start creating video-driven MIDI automation:
+
+#### <i class="bi bi-1-circle"></i> First Start
+
+![First Start](01.1_first_start.png)
+
+When you first open MIDEO, you'll see the main drop zone. Simply drag and drop your video file here or click to browse your files.
+
+![Loading Video](01.2_load_video.png)
+
+Supported formats include MP4, WebM, MOV, AVI, and MKV. The app processes everything locally—no data leaves your machine.
+
+![Video Loaded](01.3_video_loaded_now_open_cursor_canvas.png)
+
+Once your video loads, you'll see the playback controls at the bottom. Click the **⚙️ gear icon** to enable cursor placement mode.
+
+#### <i class="bi bi-2-circle"></i> Cursor Configuration
+
+![Cursor Canvas](02.2_cursor_canvas_opened.png)
+
+The cursor canvas overlay appears with instructions. Click anywhere on the video to place your first color sampling cursor.
+
+![First Cursor](02.3_first_cursor.png)
+
+Your first cursor appears on the video, and the control panel opens below showing three RGB channels. Each channel automatically gets assigned a MIDI CC number.
+
+![Configure Radius](02.4_configure_cursor_radius.png)
+
+Adjust the **sampling radius** to control how large an area each cursor samples. Larger radius = smoother color averaging. Smaller radius = more precise sampling.
+
+![Channel Controls](02.5_configure_cursor_root-point.png) ![Solo Mode](02.5_configure_cursor_set_solo.png)
+
+Use the individual channel controls to:
+- **Mute/Solo** individual RGB channels (DAW-style workflow)
+- **Enable/Disable** channels completely  
+- **Assign custom CC numbers** for your DAW
+- **Set MIDI channels** (1-16)
+
+#### <i class="bi bi-3-circle"></i> App Controls
+
+![Control Overview](03.1_controls_area.png)
+
+The main control bar provides access to all core functions:
+
+![Realtime Sampling](03.2_controls_area_overview_color_sampling_realtime.png)
+
+**Color Sampling Modes:**
+- **REALTIME** - Continuous 30ms sampling while video plays
+- **BPM SYNC** - Sample at musical intervals based on tempo
+
+![Global Controls](03.3_controls_enable_all_cursors.png) ![Disable All](03.4_controls_disable_all_cursors.png)
+
+**MIDI CC Global Controls:**
+- **Enable All** - Activate MIDI output for all cursors at once
+- **Disable All** - Instantly mute all MIDI output
+
+![BPM Controls](03.5_controls_area_overview_color_sampling_bpm_synced.png)
+
+**Sync Options:**
+- **INTERNAL** - Use MIDEO's built-in tempo (adjustable BPM)
+- **EXTERNAL** - Sync to your DAW's master clock via MIDI
+
+![External Sync](03.6_controls_area_overview_sync_external.png)
+
+When using external sync, MIDEO will follow your DAW's tempo changes automatically.
+
+#### <i class="bi bi-4-circle"></i> Let's Go!
+
+![Start Sequencing](04.1_start_midi_sequencing.png)
+
+Hit **play** to start generating MIDI! The progress bars show real-time RGB values being converted to MIDI CC data (0-127 range). 
+
+In your DAW:
+1. **Select** the parameter you want to control
+2. **Enter MIDI learn mode**
+3. **Solo** the specific RGB channel in MIDEO
+4. **Confirm** the mapping in your DAW
+
+![Reset Video](04.2_reset_video.png)
+
+Use the **Stop** button to pause, or load a new video to start fresh. Your cursor configurations are preserved when switching videos.
 
 ### <i class="bi bi-music-note"></i> MIDI Mapping Workflow
 
